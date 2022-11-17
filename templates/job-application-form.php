@@ -18,13 +18,6 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
 	$cv_temp_file    = $_FILES['application_cv']['tmp_name'];
 	move_uploaded_file( $cv_temp_file, JA_PLUGIN_DIR . "files/$cv" );
 
-	/*
-	$query
-		= "INSERT INTO $table(application_id, FirstName, LastName, Address, Email, Mobile,Post,CV) ";
-	$query             .= "VALUES('{$application_id}', '{$first_name}', '{$last_name}',  '{$address}', '{$email_address}','{$mobile_number}', {$post_name}, '{$cv}')";
-	*/
-
-
 	global $wpdb;
 	$table_ja = $wpdb->prefix . 'applicant_submissions';
 
@@ -42,7 +35,18 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
 
 
 	include_once JA_PLUGIN_DIR . 'templates/thankyou.php';
-	include_once JA_PLUGIN_DIR . 'e-mail/send-mail.php';
+
+
+	$text = 'Hi' . $first_name . '<br>' . 'Your application has been recieved';
+
+
+	$to = $email_address;
+
+	$subject = "Job Application";
+
+	// Send mail for confirmation
+	mail( $to, $subject, $text );
+
 
 
 } else {

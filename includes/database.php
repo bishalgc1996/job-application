@@ -8,6 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/*
+ *  Database Class
+ */
+
 class Database {
 
 	public function __construct() {

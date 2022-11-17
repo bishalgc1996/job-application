@@ -9,6 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/*
+*  Admin Page Functionality
+*/
+
 class Job_Application_Admin {
 
 

@@ -17,6 +17,11 @@ function ja_register_widget() {
 add_action( 'widgets_init', 'ja_register_widget' );
 
 
+/*
+* Class to register with functionality
+*/
+
+
 class Job_Application_Widget extends WP_Widget {
 //Insert functions here
 
@@ -43,6 +48,8 @@ class Job_Application_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 //output
+
+
 		echo __( 'Greetings from Bishal GC!', 'ja_widget_domain' );
 		echo $args['after_widget'];
 
