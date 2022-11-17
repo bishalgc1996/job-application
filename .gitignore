@@ -1,0 +1,8 @@
+
+/vendor/
+
+/license.txt
+/readme.html
+# Log files
+*.log
+
