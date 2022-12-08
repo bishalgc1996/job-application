@@ -59,7 +59,7 @@ class Job_Application_Widget extends WP_Widget {
 		$table_name = $wpdb->prefix . 'applicant_submissions';
 
 		$widget_data = $wpdb->get_results(
-			$wpdb->prepare( "SELECT Application_id , FirstName , LastName, Address,Email,Mobile,Post FROM $table_name ORDER BY Date DESC LIMIT 2" ),
+			$wpdb->prepare( "SELECT Application_id , FirstName , LastName, Address,Email,Mobile,Post FROM $table_name ORDER BY Date DESC LIMIT 3" ),
 			ARRAY_A
 		);
 
@@ -95,19 +95,9 @@ class Job_Application_Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		if ( isset( $instance['title'] ) ) {
-			$title = $instance['title'];
-		} else {
-			$title = __( 'Job Application Submission', 'ja_widget_domain' );
-		}
+
 		?>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-            <input class="widefat"
-                   id="<?php echo $this->get_field_id( 'title' ); ?>"
-                   name="<?php echo $this->get_field_name( 'title' ); ?>"
-                   type="text" value="<?php echo esc_attr( $title ); ?>"/>
-        </p>
+        <span class="ja-person-icon dashicons dashicons-admin-users"></span>
 		<?php
 	}
 

@@ -59,3 +59,8 @@ a {
 button.ja-delete {
     cursor: pointer;
 }
+
+span.ja-person-icon.dashicons.dashicons-admin-users {
+    margin: 0 2rem;
+    font-size: 40px;
+}

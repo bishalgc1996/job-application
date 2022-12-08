@@ -48,20 +48,20 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
 	mail( $to, $subject, $text );
 
 
-
 } else {
 
 	?>
 
     <div class="container-ja">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" class="ja-form"
+              enctype="multipart/form-data">
             <div class="row-ja">
                 <div class="col-25">
                     <label for="fname">First Name</label>
                 </div>
                 <div class="col-75">
                     <input type="text" id="fname" name="firstname"
-                           placeholder="Your name..">
+                           placeholder="Your name.." required>
                 </div>
             </div>
             <div class="row-ja">
@@ -70,7 +70,7 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
                 </div>
                 <div class="col-75">
                     <input type="text" id="lname" name="lastname"
-                           placeholder="Your last name..">
+                           placeholder="Your last name.." required>
                 </div>
             </div>
             <div class="row-ja">
@@ -88,7 +88,7 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
                 </div>
                 <div class="col-75">
                     <input id="subject" type="email" name="email-address"
-                           placeholder="Email..."></input>
+                           placeholder="Email..." required></input>
                 </div>
             </div>
             <br>
@@ -97,7 +97,7 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
                     <label for="subject">Mobile Number</label>
                 </div>
                 <div class="col-75">
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
             </div>
             <br>
@@ -107,7 +107,7 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
                 </div>
                 <div class="col-75">
                     <input id="post-name" type="text" name="job-post-name"
-                           placeholder="Post Name..."></input>
+                           placeholder="Post Name..." required></input>
                 </div>
             </div>
             <br>
@@ -117,14 +117,14 @@ if ( isset( $_POST['submit-ja-form'] ) ) {
                 </div>
 
                 <div class="col-75">
-                    <input type="file" name="application_cv">
+                    <input type="file" name="application_cv" required>
                 </div>
 
 
             </div>
             <br>
-            <div class="row">
-                <input type="submit" value="Submit" name="submit-ja-form">
+            <div class="row-ja">
+                <input id="ja-submit" type="submit" value="Submit" name="submit-ja-form">
             </div>
         </form>
     </div>
